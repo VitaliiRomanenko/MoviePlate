@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import MovieCard from './components/MovieCard'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
+import Popular from './pages/Popular'
 import NavBar from './components/NavBar'
+import TopRated from './pages/TopRated'
 import {MovieProvider} from "./contexts/MovieContext"
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/favorites" element={<Favorites/>}/>
+          <Route path="/top_rated" element={<TopRated/>}/>
+          <Route path="/popular" element={<Popular/>}/>
         </Routes>
       </main>
     </MovieProvider>
