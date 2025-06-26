@@ -1,6 +1,6 @@
 import {useMovieContext} from "../contexts/MovieContext"
 
-
+// This component displays a movie card with its poster, title, release date, and a favorite button
 function MovieCard ({movie}) {
     const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
     const favorite = isFavorite(movie.id)

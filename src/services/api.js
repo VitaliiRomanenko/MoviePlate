@@ -22,7 +22,15 @@ export const getPopularMovies = async () => {
 
 // Searches for movies by a given query string
 export const searchMovies = async (query) => {
-    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=1`;
+    const options = {
+        method: 'GET',
+        headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer ' + API_TOKEN
+        }
+    }
+    const response = await fetch(url, options);
     const data = await response.json()
     return data.results
 }
@@ -41,7 +49,7 @@ export const getTopRatedMovies = async () => {
     const data = await response.json()
     return data.results
 };
-
+// Fetches a list of movies currently playing in theaters
 export const getMowPlaying = async () => {
     const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
     const options = {

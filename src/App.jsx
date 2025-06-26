@@ -5,6 +5,7 @@ import Favorites from './pages/Favorites'
 import Popular from './pages/Popular'
 import NavBar from './components/NavBar'
 import TopRated from './pages/TopRated'
+import Search from './pages/Search'
 import {MovieProvider} from "./contexts/MovieContext"
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/favorites" element={<Favorites/>}/>
           <Route path="/top_rated" element={<TopRated/>}/>
           <Route path="/popular" element={<Popular/>}/>
+          <Route path="/search" element={<Search/>}/>
         </Routes>
       </main>
     </MovieProvider>
